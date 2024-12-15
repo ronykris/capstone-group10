@@ -67,7 +67,7 @@ if __name__ == "__main__":
         print("API key is missing. Please check your .env file.")
     else:
         # Example usage
-        image_path = r"data\20151221135642.jpg"  # Replace with your image file path
+        image_path = r"data\20151221132515.jpg"  # Replace with your image file path
         result = classify_food_and_get_macros(image_path)
 
         if result:
