@@ -1,0 +1,86 @@
+{
+    "title": "ImageAnalysis",
+    "type": "object",
+    "properties": {
+      "image_dimensions": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        },
+        "minItems": 2,
+        "maxItems": 2,
+        "description": "Original image dimensions"
+      },
+      "food_items": {
+        "type": "array",
+        "items": {
+          "title": "FoodItem",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the food item"
+            },
+            "macros": {
+              "title": "Macros",
+              "type": "object",
+              "properties": {
+                "protein": {
+                  "type": "number",
+                  "description": "Protein content in grams"
+                },
+                "fat": {
+                  "type": "number",
+                  "description": "Fat content in grams"
+                },
+                "carbs": {
+                  "type": "number",
+                  "description": "Carbohydrate content in grams"
+                }
+              },
+              "required": ["protein", "fat", "carbs"]
+            },
+            "calories": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Total calories"
+            },
+            "bounding_box": {
+              "title": "BoundingBox",
+              "type": "object",
+              "properties": {
+                "x1": {
+                  "type": "number",
+                  "description": "Top-left x-coordinate (0-1)"
+                },
+                "y1": {
+                  "type": "number",
+                  "description": "Top-left y-coordinate (0-1)"
+                },
+                "x2": {
+                  "type": "number",
+                  "description": "Bottom-right x-coordinate (0-1)"
+                },
+                "y2": {
+                  "type": "number",
+                  "description": "Bottom-right y-coordinate (0-1)"
+                }
+              },
+              "required": ["x1", "y1", "x2", "y2"]
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Confidence score of detection"
+            }
+          },
+          "required": ["name", "macros", "calories", "bounding_box"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["image_dimensions", "food_items"],
+    "additionalProperties": false
+  }
+  

@@ -25,7 +25,7 @@ def main():
 
     if food_data:
         logging.info("Food classification successful.")
-        print(json.dumps(food_data, indent=4))
+        print(food_data)
         
         # Visualize results
         FoodImageVisualizer.draw_bounding_boxes(image_path, food_data)

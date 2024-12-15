@@ -1,6 +1,6 @@
 {
     "food_classification": {
-        "v1": "Classify the food items in this image, estimate their macros (protein, fat, carbs), calories, and provide bounding boxes. Output in strict JSON format with the following structure: {\"food_items\": [{\"name\": \"\", \"macros\": {\"protein\": 0.0, \"fat\": 0.0, \"carbs\": 0.0}, \"calories\": 0, \"bounding_box\": {\"x1\": 0, \"y1\": 0, \"x2\": 0, \"y2\": 0}}]}",
-        "v2": "Enhanced food classification prompt..."
+        "v1": "Analyze the given image with dimensions {width}x{height} pixels. Classify the food items detected in the image, estimate their macronutrient composition (protein, fat, and carbs), total calories, and provide their bounding box coordinates.",
+        "v2": "Analyze the food items in this image with dimensions {width}x{height} pixels. Provide a structured JSON response with the following requirements:\n\n1. 'image_dimensions': Exact image width and height as [width, height]\n2. 'food_items': An array of detected food items, where each item contains:\n   - 'name': Specific food item name\n   - 'macros': Precise macronutrient breakdown (protein, fat, carbs in grams)\n   - 'calories': Total calories\n   - 'bounding_box': Relative coordinates (0-1 range) [x1, y1, x2, y2]\n   - Optional 'confidence': Detection confidence (0-1 range)\n\nIf no food items are detected, return an empty 'food_items' array."
     }
 }
