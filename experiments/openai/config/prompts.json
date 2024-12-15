@@ -1,0 +1,6 @@
+{
+    "food_classification": {
+        "v1": "Classify the food items in this image, estimate their macros (protein, fat, carbs), calories, and provide bounding boxes. Output in strict JSON format with the following structure: {\"food_items\": [{\"name\": \"\", \"macros\": {\"protein\": 0.0, \"fat\": 0.0, \"carbs\": 0.0}, \"calories\": 0, \"bounding_box\": {\"x1\": 0, \"y1\": 0, \"x2\": 0, \"y2\": 0}}]}",
+        "v2": "Enhanced food classification prompt..."
+    }
+}
