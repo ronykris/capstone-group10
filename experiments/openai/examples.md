@@ -1,5 +1,5 @@
 # Example 1
-*Data* - ![Example 1](data\20151221135642.jpg)
+*Data* - ![Example 1](data/20151221135642.jpg)
 ## Response 
 1. **Meatballs (approx. 3 small meatballs)**:
    - **Calories**: ~150-200
@@ -30,7 +30,7 @@
 - **Total Carbohydrates**: ~60-75g
 
 # Example 2
-*Data* - ![Example 2](data\20151221132515.jpg)
+*Data* - ![Example 2](data/20151221132515.jpg)
 ## Response 
 Based on your description, the food items appear to be:
 
