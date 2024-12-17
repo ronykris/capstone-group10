@@ -46,9 +46,11 @@ class FoodClassifier:
             encoded_image = ImageProcessor.encode_image(image)
             if not encoded_image:
                 return None
+            
+            ImageProcessor.display_encoded_image(encoded_image)
 
             # Format prompt with image dimensions
-            prompt_template = self.prompts['food_classification']['v1']
+            prompt_template = self.prompts['food_classification']['v3']
             formatted_prompt = prompt_template.format(
                 width=target_size[0], 
                 height=target_size[1]
@@ -81,7 +83,6 @@ class FoodClassifier:
 
             # Extract and parse the JSON response
             result = response.choices[0].message
-            logging.info(f"Raw API Response: {result}")
 
             try:
                 return result.parsed

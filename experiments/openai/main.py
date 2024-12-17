@@ -20,12 +20,12 @@ def main():
     )
 
     # Process image
-    image_path = "data/20151221132515.jpg"
+    image_path = "data/20151221135642.jpg"
     food_data = classifier.classify_food(image_path)
 
     if food_data:
         logging.info("Food classification successful.")
-        print(food_data)
+        logging.info(food_data)
         
         # Visualize results
         FoodImageVisualizer.draw_bounding_boxes(image_path, food_data)

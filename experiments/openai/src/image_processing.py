@@ -1,6 +1,7 @@
 import logging
 from typing import Optional, Tuple
 from PIL import Image
+import matplotlib.pyplot as plt
 import base64
 import io
 
@@ -48,3 +49,24 @@ class ImageProcessor:
         except Exception as e:
             logging.error(f"Image encoding error: {e}")
             return None
+        
+    @staticmethod
+    def display_encoded_image(encoded_image: str):
+        """
+        Display a base64-encoded image in a Jupyter Notebook.
+        
+        Args:
+            encoded_image (str): Base64 encoded image string
+        """
+        try:
+            # Decode the base64 image
+            img_data = base64.b64decode(encoded_image.split(",")[1])
+            img = Image.open(io.BytesIO(img_data))
+
+            # Display the image
+            plt.figure(figsize=(8, 8))
+            plt.imshow(img)
+            plt.axis('off')  # Turn off axis
+            plt.show()
+        except Exception as e:
+            logging.error(f"Error displaying image: {e}")
