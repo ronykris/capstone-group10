@@ -46,8 +46,6 @@ class FoodClassifier:
             encoded_image = ImageProcessor.encode_image(image)
             if not encoded_image:
                 return None
-            
-            ImageProcessor.display_encoded_image(encoded_image)
 
             # Format prompt with image dimensions
             prompt_template = self.prompts['food_classification']['v3']
