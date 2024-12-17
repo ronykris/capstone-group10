@@ -1,3 +1,11 @@
+# Bounding box example 1
+*Data* - ![be 1](data/20151221135642.jpg)
+*Output* - ![be 1 output](data/20151221135642_output.png)
+## Data Response 
+```shell
+image_dimensions=[512, 512] food_items=[FoodItem(name='Pasta', macros=Macros(protein=7.0, fat=4.0, carbs=40.0), calories=250, bounding_box=BoundingBox(x1=0.1, y1=0.12, x2=0.42, y2=0.48), confidence=0.95), FoodItem(name='Salad', macros=Macros(protein=1.0, fat=0.0, carbs=5.0), calories=25, bounding_box=BoundingBox(x1=0.56, y1=0.2, x2=0.88, y2=0.48), confidence=0.9), FoodItem(name='Meatballs', macros=Macros(protein=12.0, fat=18.0, carbs=10.0), calories=250, bounding_box=BoundingBox(x1=0.35, y1=0.52, x2=0.65, y2=0.8), confidence=0.92), FoodItem(name='Pudding', macros=Macros(protein=3.0, fat=10.0, carbs=25.0), calories=190, bounding_box=BoundingBox(x1=0.58, y1=0.02, x2=0.78, y2=0.18), confidence=0.88)]
+```
+
 # Example 1
 *Data* - ![Example 1](data/20151221135642.jpg)
 ## Response 
