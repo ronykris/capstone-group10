@@ -1,0 +1,18 @@
+path: /content/YoloNewDataset
+train: train/images
+val: val/images
+test: test/images
+names:
+  0: pane
+  1: pasta
+  2: scaloppine
+  3: carote
+  4: yogurt
+  5: pizza
+  6: cotoletta
+  7: mandarini
+  8: patate/pure
+  9: fagiolini
+  10: spinaci
+  11: budino
+nc: 12
