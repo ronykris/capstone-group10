@@ -1,0 +1,29 @@
+# Application Settings
+app:
+  name: "Food Image Segmentation API"
+  version: "1.0.0"
+  description: "API for segmenting food images using FAL AI"
+  host: "0.0.0.0"
+  port: 8002
+  debug: true
+
+# API Settings
+api:
+  prefix: "/api/v1"
+  allowed_origins: ["*"]  # CORS settings
+
+# FAL AI Settings
+fal:
+  service_name: "fal-ai/sam2/image"
+  output_format: "png"
+
+# Image Processing Settings
+image:
+  allowed_extensions: [".jpg", ".jpeg", ".png"]
+  max_size_mb: 10
+
+# Logging Settings
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: "logs/app.log"

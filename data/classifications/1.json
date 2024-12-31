@@ -1,0 +1,27 @@
+{
+    "id": 1,
+    "food_items": [
+        {
+            "id": 1,
+            "class_name": "rice",
+            "confidence": 0.95,
+            "bounding_box": {
+                "x_min": 2000,
+                "y_min": 1220,
+                "x_max": 2680,
+                "y_max": 1950
+            }
+        },
+        {
+            "id": 2,
+            "class_name": "curry",
+            "confidence": 0.92,
+            "bounding_box": {
+                "x_min": 843,
+                "y_min": 667,
+                "x_max": 1623,
+                "y_max": 1467
+            }
+        }
+    ]
+} 

@@ -1,0 +1,14 @@
+pydantic
+fal_client
+Pillow
+matplotlib
+requests>=2.25.1
+numpy
+fastapi>=0.68.0,<0.69.0
+pytest 
+pytest-asyncio 
+pytest-cov
+PyYAML
+python_multipart
+uvicorn
+python-dotenv==1.0.0

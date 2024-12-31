@@ -1,0 +1,6 @@
+.env
+.env.*
+!.env.example 
+.venv/*
+*/__pycache__/*
+app/api/__pycache__/output_handler.cpython-312.pyc
