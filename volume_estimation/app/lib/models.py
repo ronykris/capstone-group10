@@ -41,13 +41,14 @@ Volume estimation api response model
 class Macros(BaseModel):
     model_config = ConfigDict(
         json_schema_extra={
-            "required": ["protein", "fat", "carbs"],
+            "required": ["protein", "fat", "carbs", "fiber"],
             "additionalProperties": False
         }
     )
     protein: float = Field(..., description="Protein content in grams")
     fat: float = Field(..., description="Fat content in grams")
     carbs: float = Field(..., description="Carbohydrate content in grams")
+    fiber: float = Field(..., description="Fiber content in grams")
     
 class FoodItemVolumeEstimation(BaseModel):
     model_config = ConfigDict(
