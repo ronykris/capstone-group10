@@ -2,3 +2,5 @@ pydantic
 ultralytics
 numpy
 fastapi
+uvicorn
+pillow

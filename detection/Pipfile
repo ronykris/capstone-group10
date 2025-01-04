@@ -8,6 +8,9 @@ pydantic = "*"
 ultralytics = "*"
 numpy = "*"
 fastapi = "*"
+uvicorn = "*"
+pillow = "*"
+python-multipart = "*"
 
 [dev-packages]
 
