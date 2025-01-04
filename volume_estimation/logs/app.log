@@ -103,3 +103,4 @@ openai_api_key
 2025-01-04 18:04:38,542 - app.main - INFO - Shutting down Food Volume Estimation API
 2025-01-04 18:04:40,913 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
 2025-01-04 18:04:40,913 - app.main - INFO - Debug mode: True
+2025-01-04 18:05:04,498 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
