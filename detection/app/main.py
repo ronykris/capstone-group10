@@ -15,3 +15,13 @@ async def detect_food(file: UploadFile = File(...)):
     contents = await file.read()
     results = detector.detect(contents)
     return results
+
+@app.get('/healthcheck')
+async def get_health_check():
+    """
+    Health check endpoint.
+
+    Returns:
+        dict: A dictionary indicating the service health status.
+    """
+    return {"status": "ok"}
