@@ -1,0 +1,41 @@
+# Application Settings
+app:
+  name: "Food Volume Estimation API"
+  version: "1.0.0"
+  description: "API for estimating food volume using OpenAI GPT-4 Vision"
+  host: "0.0.0.0"
+  port: 8003
+  debug: true
+
+# API Settings
+api:
+  prefix: "/api/v1"
+  allowed_origins: ["*"]  # CORS settings
+  timeout: 30  # seconds
+  max_request_size: 10  # MB
+
+# OpenAI Settings
+openai:
+  model: "gpt-4o"
+  max_tokens: 1000
+  temperature: 0.2
+  timeout: 30  # seconds
+
+# Image Processing Settings
+image:
+  max_size: [1024, 1024]  # Maximum dimensions [width, height]
+  supported_formats: ["jpg", "jpeg", "png"]
+  quality: 85  # JPEG quality for processed images
+  min_confidence: 0.5  # Minimum confidence score for detections
+
+# Logging Settings
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file:
+    enabled: true
+    path: "logs/app.log"
+    max_size: 10  # MB
+    backup_count: 5
+  console:
+    enabled: true
