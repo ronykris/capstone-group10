@@ -23,8 +23,7 @@ async def process_segmentation(
     """
     try:
         # Encode image to base64
-        data_uri = encode_image_to_base64(image_buffer)
-        
+        data_uri = encode_image_to_base64(image_buffer)        
         # Convert bounding boxes to FAL AI format
         box_prompts = [
             {
@@ -40,7 +39,7 @@ async def process_segmentation(
             {
                 "x": item.bounding_box.x_min + (item.bounding_box.x_max - item.bounding_box.x_min) / 2,
                 "y": item.bounding_box.y_min + (item.bounding_box.y_max - item.bounding_box.y_min) / 2,
-                "label": item.id
+                "label": item.class_name
             }
             for item in bounding_boxes
         ]

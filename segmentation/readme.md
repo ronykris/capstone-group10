@@ -93,8 +93,14 @@ curl -X POST "http://localhost:8002/api/v1/segment" \
 ### Building the Image
 
 1. Using Docker build:
-bash
+```bash
 docker build -t food-segmentation-api .
+```
+
+2. Run docker, without script
+```bash
+docker run -it -p 8002:8002 food-segmentation-api
+```
 
 2. Using helper script:
 bash
@@ -105,22 +111,15 @@ chmod +x scripts/build_image.sh
 
 1. Basic run:
 bash
-docker run -d \
---name food-segmentation \
--p 8002:8002 \
--e FAL_KEY=your_fal_key_here \
-food-segmentation-api
+```bash
+docker run -d --name food-segmentation -p 8002:8002 -e FAL_KEY=your_fal_key_here food-segmentation-api
+```
 
 2. Development mode with volume mounts:
 bash
-docker run -d \
---name food-segmentation-dev \
--p 8002:8002 \
--v "$(pwd)/app:/app/app" \
--v "$(pwd)/config:/app/config" \
---env-file .env \
-food-segmentation-api
-
+```bash
+docker run -d --name food-segmentation-dev -p 8002:8002 -v "$(pwd)/app:/app/app" -v "$(pwd)/config:/app/config" --env-file .env food-segmentation-api
+```
 ### Testing
 
 1. Running all tests:
@@ -181,3 +180,4 @@ pytest --cov=app app/main.py
 
 # to run the app with coverage and html report
 pytest --cov=app --cov-report=html app/main.py
+

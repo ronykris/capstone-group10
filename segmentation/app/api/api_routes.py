@@ -11,6 +11,17 @@ import io
 logger = get_logger(__name__)
 router = APIRouter()
 
+@router.get('/healthcheck')
+async def get_health_check():
+    """
+    Health check endpoint.
+
+    Returns:
+        dict: A dictionary indicating the service health status.
+    """
+    return {"status": "ok"}
+
+
 @router.get("/classification/{image_id}", response_model=ClassificationDataModel)
 async def get_classification(image_id: int):
     """
