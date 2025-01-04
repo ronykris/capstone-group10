@@ -1,0 +1,15 @@
+openai==1.57.4
+pydantic==2.10.3
+fal_client==0.5.6
+Pillow==11.0.0
+matplotlib==3.10.0
+requests==2.32.3
+numpy==2.2.1
+fastapi==0.115.6
+pytest==8.3.4
+pytest-asyncio==0.25.0
+pytest-cov==6.0.0
+PyYAML==6.0.2
+python-multipart==0.0.20
+uvicorn==0.34.0
+python-dotenv==1.0.0

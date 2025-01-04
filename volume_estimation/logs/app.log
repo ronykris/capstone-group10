@@ -1,0 +1,105 @@
+2025-01-04 17:39:10,051 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 17:39:10,051 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 17:39:10,051 - app.main - INFO - Debug mode: True
+2025-01-04 17:39:10,051 - app.main - INFO - Debug mode: True
+2025-01-04 17:41:16,207 - app.api.api_routes - ERROR - Volume estimation failed: 6 validation errors for Settings
+app
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+api
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+openai
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+image
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+logging
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+openai_api_key
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-01-04 17:41:16,207 - app.api.api_routes - ERROR - Volume estimation failed: 6 validation errors for Settings
+app
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+api
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+openai
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+image
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+logging
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+openai_api_key
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-01-04 17:42:11,799 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 17:42:11,799 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 17:43:28,637 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 17:43:28,638 - app.main - INFO - Debug mode: True
+2025-01-04 17:48:41,348 - app.api.api_routes - ERROR - Volume estimation failed: 6 validation errors for Settings
+app
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+api
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+openai
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+image
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+logging
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+openai_api_key
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-01-04 17:50:30,161 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 17:50:32,584 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 17:50:32,586 - app.main - INFO - Debug mode: True
+2025-01-04 17:52:29,664 - app.api.api_routes - ERROR - Volume estimation failed: 'VolumeEstimator' object has no attribute 'settings'
+2025-01-04 17:54:09,978 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 17:54:12,255 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 17:54:12,256 - app.main - INFO - Debug mode: True
+2025-01-04 17:54:41,104 - app.api.api_routes - ERROR - Volume estimation failed: 'Completions' object has no attribute 'create'
+2025-01-04 17:54:45,615 - app.api.api_routes - ERROR - Volume estimation failed: 'Completions' object has no attribute 'create'
+2025-01-04 17:54:52,371 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 17:54:54,750 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 17:54:54,750 - app.main - INFO - Debug mode: True
+2025-01-04 17:55:01,963 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-04 17:55:01,990 - app.api.api_routes - ERROR - Volume estimation failed: object ParsedChatCompletion[VolumeEstimationDataModel] can't be used in 'await' expression
+2025-01-04 17:55:47,543 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 17:55:49,738 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 17:55:49,738 - app.main - INFO - Debug mode: True
+2025-01-04 17:55:58,698 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 17:56:01,023 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 17:56:01,024 - app.main - INFO - Debug mode: True
+2025-01-04 17:56:10,126 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-04 17:56:10,154 - app.api.api_routes - ERROR - Volume estimation failed: object ParsedChatCompletion[VolumeEstimationDataModel] can't be used in 'await' expression
+2025-01-04 17:58:19,666 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-04 17:58:19,670 - app.api.api_routes - ERROR - Volume estimation failed: object ParsedChatCompletion[VolumeEstimationDataModel] can't be used in 'await' expression
+2025-01-04 17:58:49,046 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-04 17:58:49,049 - app.api.api_routes - ERROR - Volume estimation failed: object ParsedChatCompletion[VolumeEstimationDataModel] can't be used in 'await' expression
+2025-01-04 17:59:26,561 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 17:59:28,780 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 17:59:28,780 - app.main - INFO - Debug mode: True
+2025-01-04 17:59:50,707 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-04 18:03:14,174 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 18:03:16,532 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 18:03:16,532 - app.main - INFO - Debug mode: True
+2025-01-04 18:03:37,505 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-04 18:04:31,808 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 18:04:34,077 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 18:04:34,078 - app.main - INFO - Debug mode: True
+2025-01-04 18:04:38,542 - app.main - INFO - Shutting down Food Volume Estimation API
+2025-01-04 18:04:40,913 - app.main - INFO - Starting Food Volume Estimation API v1.0.0
+2025-01-04 18:04:40,913 - app.main - INFO - Debug mode: True
