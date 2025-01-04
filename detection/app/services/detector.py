@@ -1,5 +1,6 @@
 from ultralytics import YOLO
 import numpy as np
+import io
 from PIL import Image
 from app.models.schemas import BoundingBox, FoodItemClassification, ClassificationDataModel
 
@@ -7,14 +8,22 @@ class FoodDetector:
     def __init__(self, model_path: str):
         self.model = YOLO(model_path)
 
+    def rotate_image_if_portrait(self, img):
+       width, height = img.size
+       if height > width:
+           return img.rotate(-90, expand=True), True
+       return img, False
+
     def detect(self, image_bytes: bytes) -> ClassificationDataModel:
         
         image = Image.open(io.BytesIO(image_bytes))
+
+        rotated_image, was_rotated = self.rotate_image_if_portrait(image)
         
         results = self.model.predict(
-            source=image,
+            source=rotated_image,
             conf=0.1,
-            iou=0.45
+            iou=0.45,
         )
 
         food_items = []

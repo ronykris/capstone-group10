@@ -1,9 +1,13 @@
 from fastapi import FastAPI, UploadFile, File
 from app.services.detector import FoodDetector
-import io
+import io, os
 
 app = FastAPI()
-detector = FoodDetector("models/trained_model.pt")
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "models", "trained_model_20241222-221022.pt")
+detector = FoodDetector(model_path)
+#detector = FoodDetector("./detection/app/models/trained_model_20241222-221022.pt")
 
 @app.post("/detect")
 async def detect_food(file: UploadFile = File(...)):
