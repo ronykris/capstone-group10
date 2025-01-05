@@ -1,4 +1,4 @@
-const BASE_DOMAIN = "http://localhost"
+const BASE_DOMAIN = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost"
 enum Backend {
     volume, segmentation, classification, foodSegmentation
 }
