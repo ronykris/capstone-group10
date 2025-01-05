@@ -1,0 +1,26 @@
+version: '1.0.1'
+
+services:
+  classification:
+    image: nikeshthapa255/food-segmentation-classification:latest
+    ports:
+      - "8000:8000"
+
+  segmentation:
+    image: nikeshthapa255/food-segmentation-segmentation:latest
+    ports:
+      - "8002:8002"
+    env_file:
+      - ./segmentation/.env
+
+  volume_estimation:
+    image: nikeshthapa255/food-segmentation-volume-estimation:latest
+    ports:
+      - "8003:8003"
+    env_file:
+      - ./volume_estimation/.env
+
+  frontend:
+    image: nikeshthapa255/food-segmentation-frontend:latest
+    ports:
+      - "3000:3000"
