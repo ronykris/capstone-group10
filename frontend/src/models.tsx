@@ -4,6 +4,13 @@ interface BoundingBox {
     x_max: number;
     y_max: number;
   }
+
+  interface FoodItemClassification {
+    id: number;
+    class_name: string;
+    confidence: number;
+    bounding_box: BoundingBox;
+  }
   
   interface Macros {
     protein: number;
@@ -47,5 +54,5 @@ interface BoundingBox {
   }
 
 export type {
-    VolumeEstimationData, ClassificationData, FoodItemVolumeEstimation, BoundingBox, Macros, SegmentationData
+    VolumeEstimationData, ClassificationData, FoodItemVolumeEstimation, BoundingBox, Macros, SegmentationData, FoodItemClassification
 }

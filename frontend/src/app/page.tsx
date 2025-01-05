@@ -13,48 +13,11 @@ import {
 } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import ImageInput from "@/components/image-component";
-import { IMAGE_CONFIG } from '@/constants';
-import Image from 'next/image';
-import { BoundingBox, ClassificationData, FoodItemVolumeEstimation, VolumeEstimationData } from '@/models';
+import { ClassificationData, FoodItemVolumeEstimation, VolumeEstimationData } from '@/models';
 import { food_call } from '@/utils/api_processing';
+import EnhancedImageViewer from '@/components/interfactive-image';
 
 
-const BoundingBoxOverlay = ({ 
-  box, 
-  className, 
-  color 
-}: { 
-  box: BoundingBox; 
-  className: string; 
-  color: string; 
-}) => (
-  <Box
-    sx={{
-      position: 'absolute',
-      left: box.x_min,
-      top: box.y_min,
-      width: box.x_max - box.x_min,
-      height: box.y_max - box.y_min,
-      border: 2,
-      borderColor: color,
-      display: 'flex',
-      alignItems: 'flex-end',
-      justifyContent: 'center'
-    }}
-  >
-    <Typography
-      sx={{
-        bgcolor: 'background.paper',
-        px: 1,
-        py: 0.5,
-        borderRadius: '4px 4px 0 0',
-        fontSize: '0.875rem'
-      }}
-    >
-      {className}
-    </Typography>
-  </Box>
-);
 
 const MacrosTable = ({ foodItems }: { foodItems: FoodItemVolumeEstimation[] }) => {
   const processedData = foodItems.map((data, index) => ({...data, id: index}))
@@ -79,10 +42,7 @@ const MacrosTable = ({ foodItems }: { foodItems: FoodItemVolumeEstimation[] }) =
       width: 130,
       align: 'right',
       headerAlign: 'right',
-      valueGetter: (_, value, ...rest) => {
-        console.log(value, rest);
-        return value?.macros?.fat
-      }
+      valueGetter: (_, value,) => value?.macros?.fat
     },
     { 
       field: 'protein', 
@@ -153,11 +113,6 @@ export default function Home() {
     }
   };
 
-  const getRandomColor = () => {
-    const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEEAD'];
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
-
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Typography variant="h3" component="h1" gutterBottom>
@@ -196,27 +151,10 @@ export default function Home() {
           </Paper>
 
           {imageUrl && classificationData && (
-            <Paper sx={{ p: 3 }}>
-              <Typography variant="h6" gutterBottom>
-                Detected Items
-              </Typography>
-              <Box sx={{ position: 'relative', display: 'inline-block' }}>
-                <Image
-                  src={imageUrl}
-                  alt="Analyzed food"
-                  width={IMAGE_CONFIG.width}
-                  height={IMAGE_CONFIG.height}
-                />
-                {classificationData.food_items.map((item) => (
-                  <BoundingBoxOverlay
-                    key={item.id}
-                    box={item.bounding_box}
-                    className={item.class_name}
-                    color={getRandomColor()}
-                  />
-                ))}
-              </Box>
-            </Paper>
+            <EnhancedImageViewer 
+              imageUrl={imageUrl}
+              foodItems={classificationData.food_items}
+            />
           )}
         </Box>
       )}
