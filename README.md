@@ -12,3 +12,9 @@ docker-compose up --build
 ```shell
 docker-compose down
 ```
+
+
+# Next step ideas
+- Food recepie.
+- allergic content. 
+- classify the food to grain, dairy, protein.
