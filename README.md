@@ -13,6 +13,9 @@ docker-compose up --build
 docker-compose down
 ```
 
+## Demo
+- Demo Video: [Watch here](https://drive.google.com/file/d/1a2u5NWGsyqHaUM_SYqZ5OD93Ff5U9OEO/view?usp=sharing)
+
 
 # Next step ideas
 - Food recepie.

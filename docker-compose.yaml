@@ -25,3 +25,11 @@ services:
       - "8003:8003"
     env_file:
       - ./volume_estimation/.env
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  
