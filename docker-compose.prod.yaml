@@ -24,3 +24,5 @@ services:
     image: nikeshthapa255/food-segmentation-frontend:latest
     ports:
       - "3000:3000"
+    env_file:
+      - ./frontend/.env
