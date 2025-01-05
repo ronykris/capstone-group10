@@ -1,12 +1,12 @@
 version: '1.0.1'
 
 services:
-  # classification:
-  #   build:
-  #     context: ./detection
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "8000:8000"
+  classification:
+    build:
+      context: ./detection
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
   
   segmentation:
     build:

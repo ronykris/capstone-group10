@@ -1,13 +1,17 @@
 from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
 from app.services.detector import FoodDetector
 import io, os
 
 app = FastAPI()
 
-#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-#print(f"{BASE_DIR}")
-#model_path = os.path.join(BASE_DIR, "models", "trained_model_20241222-221022.pt")
-#detector = FoodDetector(model_path)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 detector = FoodDetector("models/trained_model_20241222-221022.pt")
 
 @app.post("/detect")
@@ -18,10 +22,4 @@ async def detect_food(file: UploadFile = File(...)):
 
 @app.get('/healthcheck')
 async def get_health_check():
-    """
-    Health check endpoint.
-
-    Returns:
-        dict: A dictionary indicating the service health status.
-    """
     return {"status": "ok"}
