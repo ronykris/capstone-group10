@@ -1,12 +1,12 @@
 version: '1.0.1'
 
 services:
-  # classification:
-  #   build:
-  #     context: ./detection
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "8000:8000"
+  classification:
+    build:
+      context: ./detection
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
   
   segmentation:
     build:
@@ -25,3 +25,11 @@ services:
       - "8003:8003"
     env_file:
       - ./volume_estimation/.env
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  
