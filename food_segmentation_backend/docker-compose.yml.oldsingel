@@ -1,0 +1,41 @@
+version: '2.0.2'
+
+services:
+  workflow:
+    image: workflow-app:latest
+    ports:
+      - "8009:8009" 
+    networks:
+      - monitoring
+    labels:
+      - "prometheus.scrape=true"
+
+  prometheus:
+    image: prom/prometheus
+    user: root
+    container_name: prometheus92
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./Prometheus/prometheus.yml:/home/ubuntu/repo/capstone-group10/food_segmentation_backend/Prometheus/prometheus.yml
+      - ./Prometheus/prometheus-data:/prometheus
+    command:
+      - '--config.file=/home/ubuntu/repo/capstone-group10/food_segmentation_backend/Prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - monitoring
+  grafana:
+    image: grafana/grafana-oss
+    container_name: grafana
+    restart: unless-stopped
+    environment:
+      - '/home/ubuntu/repo/capstone-group10/Grafana/env.list'
+    ports:
+      - '5000:3000'
+    volumes:
+      - '/home/ubuntu/repo/capstone-group10/Grafana/grafana-data:/home/ubuntu/repo/capstone-group10/grafana'
+    networks:
+      - monitoring
+networks:
+  monitoring:
+    driver: bridge

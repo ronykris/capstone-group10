@@ -1,0 +1,63 @@
+services:
+  classification:
+    image: nikeshthapa255/food-segmentation-classification:latest
+    ports:
+      - "8000:8000"
+
+  segmentation:
+    image: nikeshthapa255/food-segmentation-segmentation:latest
+    ports:
+      - "8002:8002"
+    env_file:
+      - ~/food-segmentation/segmentation.env
+    
+
+  volume_estimation:
+    image: nikeshthapa255/food-segmentation-volume-estimation:latest
+    ports:
+      - "8003:8003"
+    env_file:
+      - ~/food-segmentation/volume_estimation.env
+    
+
+  frontend:
+    build:
+      context: /home/ubuntu/repo/capstone-group10/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - ~/food-segmentation/frontend.env
+    
+  workflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8009:8009" 
+    labels:
+      - "prometheus.scrape=true"
+
+  prometheus:
+    image: prom/prometheus
+    user: root
+    container_name: prometheus74
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./Prometheus/prometheus.yml:/home/ubuntu/repo/capstone-group10/food_segmentation_backend/Prometheus/prometheus.yml
+      - ./Prometheus/prometheus-data:/prometheus
+    command:
+      - '--config.file=/home/ubuntu/repo/capstone-group10/food_segmentation_backend/Prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    
+  grafana:
+    image: grafana/grafana-oss
+    container_name: grafana8
+    restart: unless-stopped
+    environment:
+      - '/home/ubuntu/repo/capstone-group10/Grafana/env.list'
+    ports:
+      - '5000:3000'
+    volumes:
+      - '/home/ubuntu/repo/capstone-group10/Grafana/grafana-data:/home/ubuntu/repo/capstone-group10/grafana'
